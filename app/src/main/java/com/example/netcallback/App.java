@@ -1,7 +1,6 @@
 package com.example.netcallback;
 
 import android.app.Application;
-
 import com.example.netcallback.utils.HttpHelper;
 import com.example.netcallback.utils.OkhttpProcessor;
 

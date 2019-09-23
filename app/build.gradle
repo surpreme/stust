@@ -37,4 +37,7 @@ dependencies {
     implementation 'com.lzy.net:okgo:3.0.4'
     implementation 'com.lzy.net:okrx2:2.0.2'
     implementation 'com.lzy.net:okserver:2.0.5'
+    //eventbus
+    implementation 'org.greenrobot:eventbus:3.1.1'
+
 }
