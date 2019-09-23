@@ -4,11 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -71,6 +73,7 @@ public class Main2Activity extends BaseActivity implements View.OnClickListener 
         super.onSaveInstanceState(outState);
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private void initViews() {
         messageLayout = findViewById(R.id.message_layout);
         newsLayout = findViewById(R.id.news_layout);
@@ -81,6 +84,12 @@ public class Main2Activity extends BaseActivity implements View.OnClickListener 
         message_text = findViewById(R.id.message_text);
         news_text = findViewById(R.id.news_text);
         setting_text = findViewById(R.id.setting_text);
+        /**
+         * 在需要右滑返回的布局添加此监听以及继承baseActivity
+         * 重写布局目前没想到好办法
+         */
+        LinearLayout linearLayout=findViewById(R.id.main2_layout);
+        linearLayout.setOnTouchListener(this);
         messageLayout.setOnClickListener(this);
         newsLayout.setOnClickListener(this);
         settingLayout.setOnClickListener(this);

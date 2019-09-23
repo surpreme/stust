@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
     private TextView textView;
     private ImageView imageView;
     private String url = "http://c.3g.163.com/photo/api/set/0001%2F2250173.json";
