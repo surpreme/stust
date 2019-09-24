@@ -3,6 +3,7 @@ package com.example.netcallback.ui.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -18,6 +19,7 @@ import com.example.netcallback.R;
 import com.example.netcallback.bean.GetJson;
 import com.example.netcallback.callback.HttpCallback;
 import com.example.netcallback.utils.HttpHelper;
+import com.example.netcallback.utils.StatusBarUtils;
 
 import java.util.HashMap;
 import java.util.List;
@@ -33,6 +35,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        StatusBarUtils.setColor(this, getResources().getColor(R.color.colorYellow));
         init();
 
     }
@@ -40,6 +43,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private void init() {
         Button button = findViewById(R.id.button);
         Button button2 = findViewById(R.id.button2);
+        Button button3=findViewById(R.id.button3);
+        button3.setOnClickListener(this);
         textView = findViewById(R.id.text);
         imageView = findViewById(R.id.imageView);
         button2.setOnClickListener(this);
@@ -104,6 +109,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 intent.setClass(MainActivity.this,Main2Activity.class);
                 startActivity(intent);
                 break;
+            case R.id.button3:
+                Intent intente=new Intent(MainActivity.this,Main3Activity.class);
+                startActivity(intente);
+                break;
+
         }
     }
 }
